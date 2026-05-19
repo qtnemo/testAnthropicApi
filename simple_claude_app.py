@@ -16,5 +16,5 @@ for block in response.content:
     if block.type == "text":
         print(block.text)
 
-print("Done!")
+print("Exit code: 0")
 exit(0)

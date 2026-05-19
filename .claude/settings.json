@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "if (git rev-parse --git-dir 2>$null) { $sha = git stash create 2>$null; if ($sha) { git stash store -m \"claude-auto-wip $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')\" $sha 2>$null } }"
+          }
+        ]
+      }
+    ]
+  }
+}
